@@ -1,0 +1,21 @@
+class Solution {
+    public List<List<Integer>> generate(int n) 
+    {
+        List<List<Integer>> kavin=new ArrayList<>();  
+        for(int i=0;i<n;i++)
+        {
+            List<Integer> hem=new ArrayList<>();
+            for(int j=0;j<=i;j++){
+            if(j==0 || j==i){
+                hem.add(1);
+            }
+            else{
+                hem.add(kavin.get(i-1).get(j)+kavin.get(i-1).get(j-1));
+            }
+            }
+            kavin.add(hem);
+           
+        } 
+        return kavin;
+    }
+}
